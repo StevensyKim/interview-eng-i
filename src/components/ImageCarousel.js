@@ -10,6 +10,8 @@ function ImageCarousel({imageData, showThumbs, showIndicators}) {
       {imageData.map(item => (
         <div key={item.id}>
           <img src={item.image_link} alt={item.id} />
+          <p>{item.name}</p>
+          <p>{item.latin_name}</p>
         </div>
       ))}
     </Carousel>
