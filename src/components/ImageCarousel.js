@@ -4,9 +4,9 @@ import PropTypes from 'prop-types';
 
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
-function ImageCarousel({imageData}) {
+function ImageCarousel({imageData, showThumbs, showIndicators}) {
   return (
-    <Carousel showThumbs={false} showIndicators={false}>
+    <Carousel showThumbs={showThumbs} showIndicators={showIndicators}>
       {imageData.map(item => (
         <div key={item.id}>
           <img src={item.image_link} alt={item.id} />
@@ -15,6 +15,12 @@ function ImageCarousel({imageData}) {
     </Carousel>
   );
 }
+
+ImageCarousel.defaultProps = {
+  imageData: [],
+  showThumbs: false,
+  showIndicators: true 
+};
 
 ImageCarousel.propTypes = {
   imageData: PropTypes.arrayOf(PropTypes.shape({
