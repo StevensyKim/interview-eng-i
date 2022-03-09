@@ -6,7 +6,7 @@ import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
 function ImageCarousel({imageData, showThumbs, showIndicators}) {
   return (
-    <Carousel showThumbs={showThumbs} showIndicators={showIndicators}>
+    <Carousel showThumbs={showThumbs} showIndicators={showIndicators} useKeyboardArrows={true}>
       {imageData.map(item => (
         <div key={item.id}>
           <img src={item.image_link} alt={item.id} />
