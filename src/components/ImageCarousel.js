@@ -4,14 +4,18 @@ import PropTypes from 'prop-types';
 
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
+import '../less/header.less';
+
 function ImageCarousel({imageData, showThumbs, showIndicators}) {
   return (
     <Carousel showThumbs={showThumbs} showIndicators={showIndicators} useKeyboardArrows={true}>
       {imageData.map(item => (
-        <div key={item.id}>
+        <div key={item.id} className='carousel-inner '>
           <img src={item.image_link} alt={item.id} />
-          <p>{item.name}</p>
-          <p>{item.latin_name}</p>
+          <div className='caption' style={{backgroundColor:'rgba(0,0,0,0.4)', color:'#fff'}}>
+            <h1>{item.name}</h1>
+            <p>{item.latin_name}</p>
+          </div>
         </div>
       ))}
     </Carousel>

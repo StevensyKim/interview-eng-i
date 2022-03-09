@@ -21,11 +21,13 @@ export default function App() {
   return (
     <BrowserRouter>
       <Header />
-      <Switch>
-        <Route path='/' exact>
-          <Home imageData={imageData} />
-        </Route>
-      </Switch>
+      <div className='container'>
+        <Switch>
+          <Route path='/' exact>
+            <Home imageData={imageData} />
+          </Route>
+        </Switch>
+      </div>
     </BrowserRouter>
   );
 }
